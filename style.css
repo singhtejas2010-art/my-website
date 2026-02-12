@@ -1,0 +1,10 @@
+/* Style the website with a modern layout, responsive design, smooth animations, and a clean color palette */
+
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
