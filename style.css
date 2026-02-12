@@ -36,16 +36,14 @@ nav {
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .nav-content {
-  max-width: 1100px;
+  width: 1100px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 20px;
 }
 
 .logo { 
@@ -65,20 +63,15 @@ nav a {
   color: var(--off-white);
   text-decoration: none;
   font-weight: 600;
-  transition: opacity 0.3s;
-}
-
-nav a:hover { 
-  opacity: 0.8;
 }
 
 /* 3. SECTION LAYOUTS */
 section {
-  padding: 100px 20px;
+  padding: 100px 0;
 }
 
 .container {
-  max-width: 1100px;
+  width: 1100px;
   margin: 0 auto;
 }
 
@@ -94,54 +87,41 @@ section {
 .image-side img {
   width: 100%;
   border-radius: 15px;
-  border: 5px solid var(--warm-yellow);
+  border: 6px solid var(--warm-yellow);
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-/* 4. INDIVIDUAL SECTIONS */
+/* 4. SECTIONS */
 
-/* Home */
-#home {
-  text-align: center;
-  background-color: var(--off-white);
-}
-#home h1 { color: var(--warm-yellow); font-size: 3rem; }
-#home p { color: var(--neutral-gray); font-size: 1.2rem; }
+#home { text-align: center; }
+#home h1 { color: var(--warm-yellow); font-size: 3.5rem; }
+#home p { color: var(--neutral-gray); font-size: 1.4rem; }
 
-/* About */
 #about {
   background-color: var(--neutral-gray);
   color: var(--off-white);
 }
 #about h2 { color: var(--warm-yellow); }
 
-/* Founders Grid */
 #founders {
-  background-color: var(--neutral-gray); /* Keeping it gray to match About or switch to off-white if preferred */
+  background-color: var(--neutral-gray);
   color: var(--off-white);
   text-align: center;
 }
+#founders h2 { color: var(--warm-yellow); margin-bottom: 50px; }
 
-#founders h2 { color: var(--warm-yellow); margin-bottom: 40px; }
-
+/* THE MAGIC PART: Founder Grid */
 .founder-grid {
   display: flex;
+  justify-content: space-between;
   gap: 40px;
-  justify-content: center;
-  margin-top: 40px;
 }
 
 .founder-card {
-  flex: 1;
-  max-width: 450px;
+  width: 500px; /* Fixed width for desktop panels */
   background: rgba(255, 255, 255, 0.05);
-  padding: 20px;
-  border-radius: 15px;
-  transition: transform 0.3s ease;
-}
-
-.founder-card:hover {
-  transform: translateY(-10px);
+  padding: 25px;
+  border-radius: 20px;
 }
 
 .founder-card img {
@@ -149,79 +129,64 @@ section {
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 15px;
-  border: 5px solid var(--warm-yellow);
-  margin-bottom: 20px;
+  border: 6px solid var(--warm-yellow);
+  margin-bottom: 25px;
 }
 
-.founder-card h3 { color: var(--warm-yellow); margin-bottom: 10px; }
+.founder-card h3 { color: var(--warm-yellow); }
 
-/* Projects Gallery */
+/* Projects Section */
 #projects {
-  background-color: var(--off-white);
   text-align: center;
+  background-color: var(--off-white);
 }
 #projects h2 { color: var(--warm-yellow); }
 
 .project-gallery {
   display: flex;
   gap: 30px;
-  justify-content: center;
-  margin-top: 40px;
-  flex-wrap: wrap;
+  margin-top: 50px;
 }
 
 .project-gallery img {
-  width: calc(50% - 15px);
-  min-width: 300px;
+  width: 535px; /* Half of the container minus gap */
   border-radius: 15px;
-  border: 5px solid var(--warm-yellow);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  border: 6px solid var(--warm-yellow);
 }
 
 /* Contact */
 #contact {
-  background-color: var(--off-white);
   text-align: center;
-  border-top: 8px solid var(--warm-yellow);
+  border-top: 10px solid var(--warm-yellow);
 }
-#contact h2 { color: var(--warm-yellow); }
 
 .contact-card {
   display: inline-block;
-  margin-top: 20px;
-  padding: 20px;
+  margin-top: 30px;
+  padding: 25px 50px;
   background: white;
-  border: 2px dashed var(--warm-yellow);
+  border: 3px dashed var(--warm-yellow);
   color: var(--dark-text);
   text-decoration: none;
   font-weight: bold;
+  font-size: 1.2rem;
 }
 
-/* Footer */
 footer {
   background: var(--dark-text);
   color: var(--off-white);
-  padding: 40px 20px;
+  padding: 50px 0;
   text-align: center;
 }
-footer a { color: var(--warm-yellow); text-decoration: none; }
+footer a { color: var(--warm-yellow); }
 
-/* 5. COMPONENTS & MOBILE */
 .btn {
   display: inline-block;
   background: var(--warm-yellow);
   color: var(--off-white);
-  padding: 15px 35px;
+  padding: 15px 40px;
   text-decoration: none;
   border-radius: 50px;
-  margin-top: 25px;
   font-weight: bold;
-}
-
-@media (max-width: 768px) {
-  .split, .founder-grid, .project-gallery {
-    flex-direction: column;
-    align-items: center;
-  }
-  .project-gallery img { width: 100%; }
+  margin-top: 20px;
 }
