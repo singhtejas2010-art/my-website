@@ -1,42 +1,130 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
+/* Color Palette & Variables */
+:root {
+  --primary: #00a8cc; /* Bright STEM Blue */
+  --dark: #050a30;    /* Deep Navy */
+  --light: #f4f7f6;
+  --white: #ffffff;
 }
 
-nav {
-  background: #2c3e50;
-  padding: 15px;
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 1.8;
+  color: #333;
 }
+
+h1, h2 {
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Navbar */
+nav {
+  background: var(--dark);
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-content {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo { color: var(--primary); font-weight: bold; font-size: 1.2rem; }
 
 nav ul {
   list-style: none;
   display: flex;
-  gap: 20px;
-  justify-content: center;
+  gap: 30px;
   margin: 0;
-  padding: 0;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  font-weight: bold;
+  font-size: 0.9rem;
+  transition: color 0.3s;
 }
 
-section {
-  padding: 60px 20px;
+nav a:hover { color: var(--primary); }
+
+/* Hero Section */
+.hero {
+  height: 80vh;
+  background: url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=1200') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
   text-align: center;
 }
 
-#home {
-  background: #f4f4f4;
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.5); /* Makes text readable over image */
+  padding: 40px;
+  border-radius: 10px;
 }
 
-#about {
-  background: white;
+/* Layout Container */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 20px;
 }
 
-#contact {
-  background: #f4f4f4;
+/* Split Layout (About Section) */
+.split {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.text-side { flex: 1; text-align: left; }
+.image-side { flex: 1; }
+
+.image-side img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  background: var(--primary);
+  color: white;
+  padding: 12px 30px;
+  text-decoration: none;
+  border-radius: 50px;
+  margin-top: 20px;
+  transition: transform 0.2s;
+}
+
+.btn:hover { transform: scale(1.05); }
+
+/* Contact Card */
+.contact-card {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 20px;
+  background: var(--white);
+  border: 2px dashed var(--primary);
+  color: var(--dark);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+  .split { flex-direction: column; text-align: center; }
+  .text-side { text-align: center; }
 }
