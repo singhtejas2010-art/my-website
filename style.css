@@ -1,33 +1,38 @@
-/* Color Palette & Variables */
+/* 1. SETUP & COLORS */
 :root {
-  --primary: #00a8cc; /* Bright STEM Blue */
-  --dark: #050a30;    /* Deep Navy */
-  --light: #f4f7f6;
-  --white: #ffffff;
+  --warm-yellow: #E8A824;
+  --off-white: #F9F5E3;
+  --neutral-gray: #8E8E8E;
+  --dark-text: #333333;
 }
 
-* { box-sizing: border-box; }
+* { 
+  box-sizing: border-box; 
+}
 
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
   line-height: 1.8;
-  color: #333;
+  color: var(--dark-text);
+  background-color: var(--off-white);
 }
 
 h1, h2 {
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
+  margin-top: 0;
 }
 
-/* Navbar */
+/* 2. NAVIGATION */
 nav {
-  background: var(--dark);
+  background: var(--warm-yellow);
   padding: 20px 0;
   position: sticky;
   top: 0;
   z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .nav-content {
@@ -39,7 +44,11 @@ nav {
   padding: 0 20px;
 }
 
-.logo { color: var(--primary); font-weight: bold; font-size: 1.2rem; }
+.logo { 
+  color: var(--off-white); 
+  font-weight: bold; 
+  font-size: 1.4rem; 
+}
 
 nav ul {
   list-style: none;
@@ -49,82 +58,102 @@ nav ul {
 }
 
 nav a {
-  color: white;
+  color: var(--off-white);
   text-decoration: none;
-  font-size: 0.9rem;
-  transition: color 0.3s;
+  font-weight: 600;
+  transition: opacity 0.3s;
 }
 
-nav a:hover { color: var(--primary); }
+nav a:hover { 
+  opacity: 0.8;
+}
 
-/* Hero Section */
-.hero {
-  height: 80vh;
-  background: url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=1200') no-repeat center center/cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
+/* 3. HOME / HERO SECTION */
+#home {
+  padding: 100px 20px;
+  background-color: var(--off-white);
   text-align: center;
 }
 
-.hero-overlay {
-  background: rgba(0, 0, 0, 0.5); /* Makes text readable over image */
-  padding: 40px;
-  border-radius: 10px;
+#home h1 {
+  color: var(--warm-yellow);
+  font-size: 3rem;
 }
 
-/* Layout Container */
+#home p {
+  color: var(--neutral-gray);
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 10px auto;
+}
+
+/* 4. ABOUT SECTION (Neutral Gray Background) */
+#about {
+  background-color: var(--neutral-gray);
+  color: var(--off-white);
+  padding: 100px 20px;
+}
+
+#about h2 {
+  color: var(--warm-yellow);
+}
+
+/* 5. CONTACT SECTION (Back to Off-White) */
+#contact {
+  background-color: var(--off-white);
+  padding: 100px 20px;
+  text-align: center;
+  border-top: 8px solid var(--warm-yellow);
+}
+
+#contact h2 {
+  color: var(--warm-yellow);
+}
+
+/* 6. LAYOUT UTILITIES */
 .container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 80px 20px;
 }
 
-/* Split Layout (About Section) */
 .split {
   display: flex;
   align-items: center;
   gap: 50px;
 }
 
-.text-side { flex: 1; text-align: left; }
+.text-side { flex: 1; }
 .image-side { flex: 1; }
 
 .image-side img {
   width: 100%;
   border-radius: 15px;
+  border: 5px solid var(--warm-yellow);
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-/* Buttons */
+/* 7. BUTTONS */
 .btn {
   display: inline-block;
-  background: var(--primary);
-  color: white;
-  padding: 12px 30px;
+  background: var(--warm-yellow);
+  color: var(--off-white);
+  padding: 15px 35px;
   text-decoration: none;
   border-radius: 50px;
-  margin-top: 20px;
+  margin-top: 25px;
+  font-weight: bold;
   transition: transform 0.2s;
 }
 
-.btn:hover { transform: scale(1.05); }
-
-/* Contact Card */
-.contact-card {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 20px;
-  background: var(--white);
-  border: 2px dashed var(--primary);
-  color: var(--dark);
-  text-decoration: none;
-  font-weight: bold;
+.btn:hover { 
+  transform: translateY(-3px);
 }
 
-/* Responsive for Mobile */
+/* 8. MOBILE RESPONSIVENESS */
 @media (max-width: 768px) {
-  .split { flex-direction: column; text-align: center; }
-  .text-side { text-align: center; }
+  .split { 
+    flex-direction: column; 
+    text-align: center; 
+  }
+  #home h1 { font-size: 2rem; }
 }
