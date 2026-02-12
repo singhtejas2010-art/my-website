@@ -10,6 +10,10 @@
   box-sizing: border-box; 
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
@@ -18,7 +22,7 @@ body {
   background-color: var(--off-white);
 }
 
-h1, h2 {
+h1, h2, h3 {
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -68,49 +72,11 @@ nav a:hover {
   opacity: 0.8;
 }
 
-/* 3. HOME / HERO SECTION */
-#home {
-  padding: 100px 20px;
-  background-color: var(--off-white);
-  text-align: center;
-}
-
-#home h1 {
-  color: var(--warm-yellow);
-  font-size: 3rem;
-}
-
-#home p {
-  color: var(--neutral-gray);
-  font-size: 1.2rem;
-  max-width: 600px;
-  margin: 10px auto;
-}
-
-/* 4. ABOUT SECTION (Neutral Gray Background) */
-#about {
-  background-color: var(--neutral-gray);
-  color: var(--off-white);
+/* 3. SECTION LAYOUTS */
+section {
   padding: 100px 20px;
 }
 
-#about h2 {
-  color: var(--warm-yellow);
-}
-
-/* 5. CONTACT SECTION (Back to Off-White) */
-#contact {
-  background-color: var(--off-white);
-  padding: 100px 20px;
-  text-align: center;
-  border-top: 8px solid var(--warm-yellow);
-}
-
-#contact h2 {
-  color: var(--warm-yellow);
-}
-
-/* 6. LAYOUT UTILITIES */
 .container {
   max-width: 1100px;
   margin: 0 auto;
@@ -132,7 +98,115 @@ nav a:hover {
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-/* 7. BUTTONS */
+/* 4. INDIVIDUAL SECTIONS */
+
+/* Home */
+#home {
+  text-align: center;
+  background-color: var(--off-white);
+}
+#home h1 { color: var(--warm-yellow); font-size: 3rem; }
+#home p { color: var(--neutral-gray); font-size: 1.2rem; }
+
+/* About */
+#about {
+  background-color: var(--neutral-gray);
+  color: var(--off-white);
+}
+#about h2 { color: var(--warm-yellow); }
+
+/* Founders Grid */
+#founders {
+  background-color: var(--neutral-gray); /* Keeping it gray to match About or switch to off-white if preferred */
+  color: var(--off-white);
+  text-align: center;
+}
+
+#founders h2 { color: var(--warm-yellow); margin-bottom: 40px; }
+
+.founder-grid {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.founder-card {
+  flex: 1;
+  max-width: 450px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.founder-card:hover {
+  transform: translateY(-10px);
+}
+
+.founder-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 5px solid var(--warm-yellow);
+  margin-bottom: 20px;
+}
+
+.founder-card h3 { color: var(--warm-yellow); margin-bottom: 10px; }
+
+/* Projects Gallery */
+#projects {
+  background-color: var(--off-white);
+  text-align: center;
+}
+#projects h2 { color: var(--warm-yellow); }
+
+.project-gallery {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.project-gallery img {
+  width: calc(50% - 15px);
+  min-width: 300px;
+  border-radius: 15px;
+  border: 5px solid var(--warm-yellow);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Contact */
+#contact {
+  background-color: var(--off-white);
+  text-align: center;
+  border-top: 8px solid var(--warm-yellow);
+}
+#contact h2 { color: var(--warm-yellow); }
+
+.contact-card {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 20px;
+  background: white;
+  border: 2px dashed var(--warm-yellow);
+  color: var(--dark-text);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Footer */
+footer {
+  background: var(--dark-text);
+  color: var(--off-white);
+  padding: 40px 20px;
+  text-align: center;
+}
+footer a { color: var(--warm-yellow); text-decoration: none; }
+
+/* 5. COMPONENTS & MOBILE */
 .btn {
   display: inline-block;
   background: var(--warm-yellow);
@@ -142,18 +216,12 @@ nav a:hover {
   border-radius: 50px;
   margin-top: 25px;
   font-weight: bold;
-  transition: transform 0.2s;
 }
 
-.btn:hover { 
-  transform: translateY(-3px);
-}
-
-/* 8. MOBILE RESPONSIVENESS */
 @media (max-width: 768px) {
-  .split { 
-    flex-direction: column; 
-    text-align: center; 
+  .split, .founder-grid, .project-gallery {
+    flex-direction: column;
+    align-items: center;
   }
-  #home h1 { font-size: 2rem; }
+  .project-gallery img { width: 100%; }
 }
