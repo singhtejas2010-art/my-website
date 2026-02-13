@@ -63,17 +63,9 @@ nav a {
   color: var(--off-white);
   text-decoration: none;
   font-weight: 600;
-  transition: 0.3s; /* Added transition for nav links */
-  padding: 5px 10px;
 }
 
-nav a:hover {
-  color: var(--dark-text);
-  background: white;
-  border-radius: 5px;
-}
-
-/* 3. SECTION LAYOUTS (The part we need back!) */
+/* 3. SECTION LAYOUTS */
 section {
   padding: 100px 0;
 }
@@ -100,6 +92,7 @@ section {
 }
 
 /* 4. SECTIONS */
+
 #home { text-align: center; }
 #home h1 { color: var(--warm-yellow); font-size: 3.5rem; }
 #home p { color: var(--neutral-gray); font-size: 1.4rem; }
@@ -109,6 +102,38 @@ section {
   color: var(--off-white);
 }
 #about h2 { color: var(--warm-yellow); }
+
+#founders {
+  background-color: var(--neutral-gray);
+  color: var(--off-white);
+  text-align: center;
+}
+#founders h2 { color: var(--warm-yellow); margin-bottom: 50px; }
+
+/* THE MAGIC PART: Founder Grid */
+.founder-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.founder-card {
+  width: 500px; /* Fixed width for desktop panels */
+  background: rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  border-radius: 20px;
+}
+
+.founder-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 6px solid var(--warm-yellow);
+  margin-bottom: 25px;
+}
+
+.founder-card h3 { color: var(--warm-yellow); }
 
 /* Projects Section */
 #projects {
@@ -124,28 +149,15 @@ section {
 }
 
 .project-gallery img {
-  width: 535px; /* Back to your original width */
+  width: 535px; /* Half of the container minus gap */
   border-radius: 15px;
   border: 6px solid var(--warm-yellow);
 }
 
-/* 5. BUTTONS & CONTACT TRANSITIONS */
-.btn {
-  display: inline-block;
-  background: var(--warm-yellow);
-  color: var(--off-white);
-  padding: 15px 40px;
-  text-decoration: none;
-  border-radius: 50px;
-  font-weight: bold;
-  margin-top: 20px;
-  transition: all 0.3s ease;
-}
-
-.btn:hover {
-  background-color: #d1941d;
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+/* Contact */
+#contact {
+  text-align: center;
+  border-top: 10px solid var(--warm-yellow);
 }
 
 .contact-card {
@@ -158,19 +170,6 @@ section {
   text-decoration: none;
   font-weight: bold;
   font-size: 1.2rem;
-  transition: all 0.3s ease;
-}
-
-.contact-card:hover {
-  background-color: var(--warm-yellow);
-  color: white;
-  border-style: solid;
-  transform: scale(1.05);
-}
-
-#contact {
-  text-align: center;
-  border-top: 10px solid var(--warm-yellow);
 }
 
 footer {
