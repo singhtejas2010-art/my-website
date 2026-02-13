@@ -179,3 +179,15 @@ footer {
   text-align: center;
 }
 footer a { color: var(--warm-yellow); }
+
+.btn {
+  display: inline-block;
+  background: var(--warm-yellow);
+  color: var(--off-white);
+  padding: 15px 40px;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
