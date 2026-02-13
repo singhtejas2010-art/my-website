@@ -63,6 +63,15 @@ nav a {
   color: var(--off-white);
   text-decoration: none;
   font-weight: 600;
+  transition: 0.3s;
+  padding: 5px 10px;
+}
+
+/* Nav Hover Effect */
+nav a:hover {
+  color: var(--dark-text);
+  background: white;
+  border-radius: 5px;
 }
 
 /* 3. SECTION LAYOUTS */
@@ -75,24 +84,7 @@ section {
   margin: 0 auto;
 }
 
-.split {
-  display: flex;
-  align-items: center;
-  gap: 50px;
-}
-
-.text-side { flex: 1; }
-.image-side { flex: 1; }
-
-.image-side img {
-  width: 100%;
-  border-radius: 15px;
-  border: 6px solid var(--warm-yellow);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
 /* 4. SECTIONS */
-
 #home { text-align: center; }
 #home h1 { color: var(--warm-yellow); font-size: 3.5rem; }
 #home p { color: var(--neutral-gray); font-size: 1.4rem; }
@@ -102,38 +94,6 @@ section {
   color: var(--off-white);
 }
 #about h2 { color: var(--warm-yellow); }
-
-#founders {
-  background-color: var(--neutral-gray);
-  color: var(--off-white);
-  text-align: center;
-}
-#founders h2 { color: var(--warm-yellow); margin-bottom: 50px; }
-
-/* THE MAGIC PART: Founder Grid */
-.founder-grid {
-  display: flex;
-  justify-content: space-between;
-  gap: 40px;
-}
-
-.founder-card {
-  width: 500px; /* Fixed width for desktop panels */
-  background: rgba(255, 255, 255, 0.05);
-  padding: 25px;
-  border-radius: 20px;
-}
-
-.founder-card img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 15px;
-  border: 6px solid var(--warm-yellow);
-  margin-bottom: 25px;
-}
-
-.founder-card h3 { color: var(--warm-yellow); }
 
 /* Projects Section */
 #projects {
@@ -149,19 +109,42 @@ section {
 }
 
 .project-gallery img {
-  width: 535px; /* Half of the container minus gap */
+  width: 100%; /* Makes images fill their half of the container */
+  flex: 1;
   border-radius: 15px;
   border: 6px solid var(--warm-yellow);
+  object-fit: cover;
 }
 
-/* Contact */
+/* Contact Section */
 #contact {
   text-align: center;
   border-top: 10px solid var(--warm-yellow);
 }
 
-.contact-card {
+/* 5. BUTTONS & TRANSITIONS */
+.btn, .contact-card {
   display: inline-block;
+  transition: all 0.3s ease; /* The magic smooth transition */
+}
+
+.btn {
+  background: var(--warm-yellow);
+  color: var(--off-white);
+  padding: 15px 40px;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.btn:hover {
+  background-color: #d1941d; /* Slightly darker yellow */
+  transform: translateY(-3px); /* Lifts the button */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.contact-card {
   margin-top: 30px;
   padding: 25px 50px;
   background: white;
@@ -172,6 +155,13 @@ section {
   font-size: 1.2rem;
 }
 
+.contact-card:hover {
+  background-color: var(--warm-yellow);
+  color: white;
+  border-style: solid;
+  transform: scale(1.05); /* Grows slightly */
+}
+
 footer {
   background: var(--dark-text);
   color: var(--off-white);
@@ -179,44 +169,3 @@ footer {
   text-align: center;
 }
 footer a { color: var(--warm-yellow); }
-
-.btn {
-  display: inline-block;
-  background: var(--warm-yellow);
-  color: var(--off-white);
-  padding: 15px 40px;
-  text-decoration: none;
-  border-radius: 50px;
-  font-weight: bold;
-  margin-top: 20px;
-}
-
-/* --- TEST COMMIT --- */
-nav a:hover {
-  color: var(--dark-text); /* Changes link from white to dark gray on hover */
-  background: white;
-  border-radius: 5px;
-  padding: 5px 10px;
-  transition: 0.3s;
-}
-/* --- BUTTON TRANSITIONS --- */
-
-/* This sets the "starting state" for all buttons */
-.btn, .contact-card {
-  transition: all 0.3s ease; /* Makes every change take 0.3 seconds */
-}
-
-/* Hover effect for the main yellow buttons */
-.btn:hover {
-  background-color: #d1941d; /* Slightly darker yellow */
-  transform: translateY(-3px); /* Lifts the button up slightly */
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Adds a soft shadow */
-}
-
-/* Hover effect for the dashed Contact card */
-.contact-card:hover {
-  background-color: var(--warm-yellow);
-  color: white;
-  border-style: solid; /* Changes dashed to solid on hover */
-  transform: scale(1.05); /* Grows the button by 5% */
-}
