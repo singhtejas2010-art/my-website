@@ -199,3 +199,24 @@ nav a:hover {
   padding: 5px 10px;
   transition: 0.3s;
 }
+/* --- BUTTON TRANSITIONS --- */
+
+/* This sets the "starting state" for all buttons */
+.btn, .contact-card {
+  transition: all 0.3s ease; /* Makes every change take 0.3 seconds */
+}
+
+/* Hover effect for the main yellow buttons */
+.btn:hover {
+  background-color: #d1941d; /* Slightly darker yellow */
+  transform: translateY(-3px); /* Lifts the button up slightly */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* Adds a soft shadow */
+}
+
+/* Hover effect for the dashed Contact card */
+.contact-card:hover {
+  background-color: var(--warm-yellow);
+  color: white;
+  border-style: solid; /* Changes dashed to solid on hover */
+  transform: scale(1.05); /* Grows the button by 5% */
+}
