@@ -64,13 +64,13 @@ nav a {
   text-decoration: none;
   font-weight: 600;
   transition: 0.3s;
+  padding: 5px 10px;
 }
 
 nav a:hover {
   color: var(--dark-text);
   background: white;
   border-radius: 5px;
-  padding: 5px 10px;
 }
 
 /* 3. SECTION LAYOUTS */
@@ -110,7 +110,7 @@ section {
 }
 #about h2 { color: var(--warm-yellow); }
 
-/* Projects Section - CENTERING FIX APPLIED HERE */
+/* Projects Section - CENTERING FIX */
 #projects {
   text-align: center;
   background-color: var(--off-white);
@@ -119,21 +119,21 @@ section {
 
 .project-gallery {
   display: flex;
-  justify-content: center; /* Centers the images horizontally */
+  justify-content: center; 
   gap: 30px;
   margin-top: 50px;
-  flex-wrap: wrap;         /* Allows wrapping if screen is small */
+  flex-wrap: wrap;         
 }
 
 .project-gallery img {
-  width: 500px;            /* Consistent width */
-  height: 350px;           /* Consistent height */
+  width: 500px;            
+  height: 350px;           
   border-radius: 15px;
   border: 6px solid var(--warm-yellow);
-  object-fit: cover;       /* Prevents stretching/squishing */
+  object-fit: cover;       
 }
 
-/* 5. BUTTONS & CONTACT TRANSITIONS */
+/* 5. BUTTONS & TRANSITIONS (Fixed and Added Back) */
 .btn {
   display: inline-block;
   background: var(--warm-yellow);
@@ -143,13 +143,13 @@ section {
   border-radius: 50px;
   font-weight: bold;
   margin-top: 20px;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease; /* Enables the smooth movement */
 }
 
 .btn:hover {
-  background-color: #d1941d;
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  background-color: #d1941d; /* Becomes darker yellow */
+  transform: translateY(-5px); /* Moves up 5 pixels */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
 .contact-card {
@@ -169,7 +169,7 @@ section {
   background-color: var(--warm-yellow);
   color: white;
   border-style: solid;
-  transform: scale(1.05);
+  transform: scale(1.05); /* Grows by 5% */
 }
 
 #contact {
