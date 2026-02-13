@@ -190,3 +190,12 @@ footer a { color: var(--warm-yellow); }
   font-weight: bold;
   margin-top: 20px;
 }
+
+/* --- TEST COMMIT --- */
+nav a:hover {
+  color: var(--dark-text); /* Changes link from white to dark gray on hover */
+  background: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  transition: 0.3s;
+}
