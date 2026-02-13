@@ -63,18 +63,17 @@ nav a {
   color: var(--off-white);
   text-decoration: none;
   font-weight: 600;
-  transition: 0.3s;
+  transition: 0.3s; /* Added transition for nav links */
   padding: 5px 10px;
 }
 
-/* Nav Hover Effect */
 nav a:hover {
   color: var(--dark-text);
   background: white;
   border-radius: 5px;
 }
 
-/* 3. SECTION LAYOUTS */
+/* 3. SECTION LAYOUTS (The part we need back!) */
 section {
   padding: 100px 0;
 }
@@ -82,6 +81,22 @@ section {
 .container {
   width: 1100px;
   margin: 0 auto;
+}
+
+.split {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.text-side { flex: 1; }
+.image-side { flex: 1; }
+
+.image-side img {
+  width: 100%;
+  border-radius: 15px;
+  border: 6px solid var(--warm-yellow);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 /* 4. SECTIONS */
@@ -109,26 +124,14 @@ section {
 }
 
 .project-gallery img {
-  width: 100%; /* Makes images fill their half of the container */
-  flex: 1;
+  width: 535px; /* Back to your original width */
   border-radius: 15px;
   border: 6px solid var(--warm-yellow);
-  object-fit: cover;
 }
 
-/* Contact Section */
-#contact {
-  text-align: center;
-  border-top: 10px solid var(--warm-yellow);
-}
-
-/* 5. BUTTONS & TRANSITIONS */
-.btn, .contact-card {
-  display: inline-block;
-  transition: all 0.3s ease; /* The magic smooth transition */
-}
-
+/* 5. BUTTONS & CONTACT TRANSITIONS */
 .btn {
+  display: inline-block;
   background: var(--warm-yellow);
   color: var(--off-white);
   padding: 15px 40px;
@@ -136,15 +139,17 @@ section {
   border-radius: 50px;
   font-weight: bold;
   margin-top: 20px;
+  transition: all 0.3s ease;
 }
 
 .btn:hover {
-  background-color: #d1941d; /* Slightly darker yellow */
-  transform: translateY(-3px); /* Lifts the button */
+  background-color: #d1941d;
+  transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .contact-card {
+  display: inline-block;
   margin-top: 30px;
   padding: 25px 50px;
   background: white;
@@ -153,13 +158,19 @@ section {
   text-decoration: none;
   font-weight: bold;
   font-size: 1.2rem;
+  transition: all 0.3s ease;
 }
 
 .contact-card:hover {
   background-color: var(--warm-yellow);
   color: white;
   border-style: solid;
-  transform: scale(1.05); /* Grows slightly */
+  transform: scale(1.05);
+}
+
+#contact {
+  text-align: center;
+  border-top: 10px solid var(--warm-yellow);
 }
 
 footer {
