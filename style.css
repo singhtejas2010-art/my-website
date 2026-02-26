@@ -130,10 +130,16 @@ section {
   height: 350px;           
   border-radius: 15px;
   border: 6px solid var(--warm-yellow);
-  object-fit: cover;       
+  object-fit: cover;    
+  transition: transform 0.4s ease;   
 }
 
-/* 5. BUTTONS & TRANSITIONS (Fixed and Added Back) */
+.project-gallery img:hover {
+  transform: scale(1.05); 
+  cursor: pointer;        
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2); 
+}
+
 .btn {
   display: inline-block;
   background: var(--warm-yellow);
@@ -143,12 +149,12 @@ section {
   border-radius: 50px;
   font-weight: bold;
   margin-top: 20px;
-  transition: all 0.3s ease; /* Enables the smooth movement */
+  transition: all 0.3s ease;
 }
 
 .btn:hover {
-  background-color: #d1941d; /* Becomes darker yellow */
-  transform: translateY(-5px); /* Moves up 5 pixels */
+  background-color: #d1941d; 
+  transform: translateY(-5px); 
   box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
@@ -169,7 +175,7 @@ section {
   background-color: var(--warm-yellow);
   color: white;
   border-style: solid;
-  transform: scale(1.05); /* Grows by 5% */
+  transform: scale(1.05); 
 }
 
 #contact {
