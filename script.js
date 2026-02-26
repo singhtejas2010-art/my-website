@@ -13,3 +13,21 @@ document.querySelectorAll('nav a').forEach(anchor => {
     }
   });
 });
+
+function reveal() {
+  const reveals = document.querySelectorAll(".reveal");
+
+  reveals.forEach((element) => {
+    const windowHeight = window.innerHeight;
+    const elementTop = element.getBoundingClientRect().top;
+    const elementVisible = 100; // Pixels from bottom before it triggers
+
+    if (elementTop < windowHeight - elementVisible) {
+      element.classList.add("active");
+    }
+  });
+}
+
+// Check on scroll and on initial page load
+window.addEventListener("scroll", reveal);
+window.addEventListener("load", reveal);
